@@ -23,6 +23,7 @@ namespace FibonacciConsole
                     int[] result = FibonacciMethods.GenerateSequence(numberOfElements);
                     return result;
                 }
+
                 attempt++;
             }
 
@@ -35,7 +36,8 @@ namespace FibonacciConsole
 
             if (array.Length is 0)
             {
-                Console.WriteLine("Nu exista elemente in sirul lui Fibonacci!", Console.ForegroundColor = ConsoleColor.Red);
+                Console.WriteLine("Valoarea introdusa nu este un numar sau este o valoare mai mica decat 1!" +
+                    " Nu exista elemente in sirul lui Fibonacci!", Console.ForegroundColor = ConsoleColor.Red);
             }
             else
             {
