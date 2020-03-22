@@ -24,7 +24,21 @@ namespace FibonacciLibrary
                     }
                     else
                     {
-                        result[i] = result[i - 2] + result[i - 1];
+                        if (result[i] < 0)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            if (result[i - 2] + result[i - 1] < 0)
+                            {
+                                result[i] = int.MaxValue;
+                            }
+                            else
+                            {
+                                result[i] = result[i - 2] + result[i - 1];
+                            }
+                        }
                     }
                 }
 
