@@ -6,15 +6,28 @@ namespace FibonacciLibrary
 {
     public static class FibonacciMethods
     {
-        public static int[] GenerateSequence(int elements)
+        public const int MaxNumberOfElements = 93;
+
+        public static long[] GenerateSequence(int elements)
         {
             if (elements < 1)
             {
-                return new int[] { };
+                return new long[] { };
             }
             else
             {
-                int[] result = new int[elements];
+                if (elements > MaxNumberOfElements)
+                {
+                    // Option 1:
+                    // throw exception
+                    // throw new ArgumentOutOfRangeException(nameof(elements), $"Max value is {MaxNumberOfElements}");
+
+                    // Option 2:
+                    // force max number of elements
+                    elements = MaxNumberOfElements;
+                }
+
+                long[] result = new long[elements];
 
                 for (int i = 0; i < elements; i++)
                 {
@@ -24,21 +37,7 @@ namespace FibonacciLibrary
                     }
                     else
                     {
-                        if (result[i] < 0)
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            if (result[i - 2] + result[i - 1] < 0)
-                            {
-                                result[i] = int.MaxValue;
-                            }
-                            else
-                            {
-                                result[i] = result[i - 2] + result[i - 1];
-                            }
-                        }
+                        result[i] = result[i - 2] + result[i - 1];
                     }
                 }
 

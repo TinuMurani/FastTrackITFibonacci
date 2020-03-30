@@ -6,7 +6,7 @@ namespace FibonacciConsole
     {
         static void Main(string[] args)
         {
-            int[] fibonacciSequence = ConsoleHelper.CreateFibonacciSequence(3);
+            long[] fibonacciSequence = ConsoleHelper.CreateFibonacciSequence(3);
 
             ConsoleHelper.PrintSequence(fibonacciSequence);
 

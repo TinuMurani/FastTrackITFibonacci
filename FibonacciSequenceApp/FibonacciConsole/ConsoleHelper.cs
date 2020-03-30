@@ -7,7 +7,7 @@ namespace FibonacciConsole
 {
     public static class ConsoleHelper
     {
-        public static int[] CreateFibonacciSequence(int maxAttempts) 
+        public static long[] CreateFibonacciSequence(int maxAttempts) 
         {
             int attempt = 1;
 
@@ -20,17 +20,17 @@ namespace FibonacciConsole
 
                 if (isValid)
                 {
-                    int[] result = FibonacciMethods.GenerateSequence(numberOfElements);
+                    long[] result = FibonacciMethods.GenerateSequence(numberOfElements);
                     return result;
                 }
 
                 attempt++;
             }
 
-            return new int[] { };
+            return new long[] { };
         }
 
-        public static void PrintSequence(int[] array)
+        public static void PrintSequence(long[] array)
         {
             StringBuilder sb = new StringBuilder();
 
